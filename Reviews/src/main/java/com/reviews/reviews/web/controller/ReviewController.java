@@ -42,7 +42,6 @@ public class ReviewController {
         List<Review> reviewsSortedByRating = this.reviewService.sortByRating(orderByRating, reviewsSortedByDate);
         List<Review> reviewsSortedByText = this.reviewService.sortByText(prioritizeByText, reviewsSortedByRating);
         model.addAttribute("reviewsSorted", reviewsSortedByText);
-        System.out.printf("%s %d %s %s\n",orderByRating, minimumRating, orderByDate, prioritizeByText);
         return "review";
     }
 }
